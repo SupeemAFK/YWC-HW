@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Major } from "../types/MajorEnum";
 import { ChevronRightIcon } from '@radix-ui/react-icons'
 
@@ -24,7 +23,7 @@ function Card(props: Props) {
               />
             </div>
             <div className='mt-3 font-prompt flex justify-center items-center w-full'>
-                <Link className='cursor-pointer flex items-center p-2 border-[0.1rem] border-white rounded-md' href={`major/${props.major}`}>เลือก <ChevronRightIcon /></Link>
+                <button onClick={props.handleClick} className='cursor-pointer flex items-center p-2 border-[0.1rem] border-white rounded-md'>เลือก <ChevronRightIcon /></button>
             </div>
         </div>
     )
