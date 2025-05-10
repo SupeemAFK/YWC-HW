@@ -15,7 +15,7 @@ const SadEffect = () => {
       zIndex: 999,
     };
 
-    const interval: any = setInterval(() => {
+    const interval = setInterval(() => {
       const timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
@@ -30,7 +30,7 @@ const SadEffect = () => {
         shapes: ['circle'],
         origin: {
           x: Math.random(),
-          y: -0.1, // start just above the view
+          y: -0.1,
         },
       });
     }, 300);

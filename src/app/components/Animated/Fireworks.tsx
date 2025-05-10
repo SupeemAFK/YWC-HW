@@ -7,7 +7,7 @@ const Firework = () => {
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
 
-    const interval: any = setInterval(() => {
+    const interval = setInterval(() => {
       const timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
@@ -15,7 +15,6 @@ const Firework = () => {
       }
 
       const particleCount = 50 * (timeLeft / duration);
-      // Random origin
       confetti({
         ...defaults,
         particleCount,
@@ -29,7 +28,7 @@ const Firework = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return null; // No visible UI needed
+  return null;
 };
 
 export default Firework;

@@ -29,6 +29,7 @@ function Card(props: Props) {
                             props.major == Major.Content ? "/images/content.png" :
                             props.major == Major.Marketing ? "/images/marketing-1.png" : ""
                         } 
+                        alt={props.major}
                     />
                 </div>
             </UpDownHover>
