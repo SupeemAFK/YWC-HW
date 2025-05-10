@@ -7,10 +7,11 @@ import { useForm } from "react-hook-form"
 import { z } from 'zod';
 import { checkCandidate } from '../actions/checkCandidate'
 import { Major } from '../types/MajorEnum'
-import { redirect } from 'next/navigation'
+import { Result } from '../page'
 
 interface Props {
     major: Major
+    submitCallback: (result: Result) => void;
 }
 
 const FormSchema = z.object({
@@ -23,9 +24,9 @@ function Form(props: Props) {
     const { handleSubmit, register } = useForm<FormSchemaType>({ resolver: zodResolver(FormSchema) })
 
     async function onSubmit(values: z.infer<typeof FormSchema>) {
-        const isPassed = await checkCandidate(values.firstname, values.lastname, props.major);
-        if (isPassed) return redirect("/result/candidate");
-        return redirect("/result/ineligible");
+        const candidate = await checkCandidate(values.firstname, values.lastname, props.major);
+        if (candidate) return props.submitCallback({ candidate, pass: true });
+        return props.submitCallback({ candidate: null, pass: false });
     }
 
     return (
