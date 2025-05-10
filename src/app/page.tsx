@@ -8,6 +8,7 @@ import { Major } from "./types/MajorEnum";
 import { useState } from "react";
 import Form from "./components/Form";
 import { Candidate } from "./actions/checkCandidate";
+import Link from "next/link";
 
 export interface Result {
   candidate: Candidate | null
@@ -120,6 +121,9 @@ export default function Home() {
               <Card handleClick={() => setMajor(Major.Marketing)} major={Major.Marketing} />
               <Card handleClick={() => setMajor(Major.Content)} major={Major.Content}/>
             </div>
+          </div>
+          <div className="mt-10 w-full flex items-center justify-center">
+            <Link className='cursor-pointer inline p-2 border-[0.1rem] border-white rounded-md hover:opacity-50 transition-all duration-300' href="/table">View Table</Link>
           </div>
         </Fade>
       )}

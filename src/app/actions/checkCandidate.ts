@@ -7,7 +7,7 @@ export interface Candidate {
     major: string
 }
 
-interface CandidatesResponse {
+export interface CandidatesResponse {
     design: Candidate[],
     content: Candidate[],
     programming: Candidate[],
