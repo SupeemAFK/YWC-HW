@@ -9,6 +9,8 @@ import { useState } from "react";
 import Form from "./components/Form";
 import { Candidate } from "./actions/checkCandidate";
 import Link from "next/link";
+import Firework from "./components/Animated/Fireworks";
+import SadEffect from "./components/Animated/SadEffect";
 
 export interface Result {
   candidate: Candidate | null
@@ -22,6 +24,7 @@ export default function Home() {
   if (result && result.pass && result.candidate) {
     return (
       <div className="h-screen relative flex items-center justify-center p-10 font-prompt overflow-hidden">
+        <Firework />
         <div className="absolute w-96 h-96 rounded-full bg-green-400 opacity-20 blur-3xl pointer-events-none transition-all duration-200 group-hover:opacity-0">
           </div>
         <Fade animKey="candidate">
@@ -56,6 +59,7 @@ export default function Home() {
   else if (result && !result.pass) {
     return (
       <div className="h-screen relative flex items-center justify-center p-10 font-prompt overflow-hidden">
+        <SadEffect />
         <div className="absolute w-96 h-96 rounded-full bg-red-400 opacity-20 blur-3xl pointer-events-none transition-all duration-200 group-hover:opacity-0">
           </div>
         <Fade animKey="ineligible">
