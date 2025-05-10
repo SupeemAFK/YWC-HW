@@ -4,6 +4,7 @@ import { DataTable } from './data-table';
 import { CandidateColumn, columns } from "./columns"
 import Link from 'next/link';
 import Fade from '../components/Animated/Fade';
+import { Pencil1Icon } from '@radix-ui/react-icons';
 
 async function getData() {
     const res = await fetch("https://api.ywc20.ywc.in.th/homework/candidates", {
@@ -20,9 +21,17 @@ async function TablePage() {
     const data = await getData();
 
   return (
-    <div className='h-screen relative font-prompt overflow-hidden'>
+    <div className='h-screen relative font-prompt overflow-hidden py-10'>
         <Fade animKey='table' className='w-full h-full flex flex-col items-center justify-center'>
-            <div className='lg:w-4xl w-full h-[50rem] overflow-y-scroll border-2 border-[#1c1917] bg-black p-5 rounded-md'>
+            <div className='flex items-center relative'>
+                <div className="absolute w-72 h-72 rounded-full bg-conic/decreasing from-violet-700 via-lime-300 to-violet-700 opacity-10 blur-3xl pointer-events-none transition-all duration-700 group-hover:opacity-0">
+                </div>
+                <h1 className="text-3xl lg:text-5xl">
+                    Table View
+                </h1>
+                <Pencil1Icon className='ml-2' />
+            </div>
+            <div className='mt-10 lg:w-4xl w-full h-[50rem] overflow-y-scroll border-2 border-[#1c1917] bg-black p-5 rounded-md'>
                 <DataTable columns={columns} data={data} />
             </div>
             <div className='mt-10'>
