@@ -22,22 +22,22 @@ export async function checkCandidate(firstname: string, lastname: string, major:
     })
     const data: CandidatesResponse = await res.json();
     if (major == "design") {
-        const candidate = data.design.find(candidate => candidate.firstName == firstname && candidate.lastName == lastname);
+        const candidate = data.design.find(candidate => candidate.firstName.toLowerCase() == firstname.toLowerCase() && candidate.lastName.toLowerCase() == lastname.toLowerCase());
         if (candidate) return candidate;
         return null;
     }
     else if (major == "programming") {
-        const candidate = data.programming.find(candidate => candidate.firstName == firstname && candidate.lastName == lastname);
+        const candidate = data.programming.find(candidate => candidate.firstName.toLowerCase() == firstname.toLowerCase() && candidate.lastName.toLowerCase() == lastname.toLowerCase());
         if (candidate) return candidate;
         return null;
     }
     else if (major == "content") {
-        const candidate = data.content.find(candidate => candidate.firstName == firstname && candidate.lastName == lastname);
+        const candidate = data.content.find(candidate => candidate.firstName.toLowerCase() == firstname.toLowerCase() && candidate.lastName.toLowerCase() == lastname.toLowerCase());
         if (candidate) return candidate;
         return null;
     }
     else if (major == "marketing") {
-        const candidate = data.marketing.find(candidate => candidate.firstName == firstname && candidate.lastName == lastname);
+        const candidate = data.marketing.find(candidate => candidate.firstName.toLowerCase() == firstname.toLowerCase() && candidate.lastName.toLowerCase() == lastname.toLowerCase());
         if (candidate) return candidate;
         return null;
     }
