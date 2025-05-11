@@ -116,12 +116,12 @@ export default function Home() {
             <div className="absolute w-full h-full rounded-full bg-linear-to-r/increasing from-indigo-500 to-teal-400 opacity-10 blur-3xl pointer-events-none transition-all duration-700 group-hover:opacity-0">
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-3">
+            <div className="flex flex-col justify-center items-center lg:flex-row gap-3">
               <Card handleClick={() => setMajor(Major.Design)} major={Major.Design} />
               <Card handleClick={() => setMajor(Major.Programming)} major={Major.Programming} />
             </div>
 
-            <div className="mt-3 flex flex-col lg:flex-row gap-3">
+            <div className="mt-3 flex flex-col justify-center items-center lg:flex-row gap-3">
               <Card handleClick={() => setMajor(Major.Marketing)} major={Major.Marketing} />
               <Card handleClick={() => setMajor(Major.Content)} major={Major.Content}/>
             </div>
@@ -131,9 +131,9 @@ export default function Home() {
           </div>
         </Fade>
       )}
-      <div className="absolute bottom-[-30rem] left-[-20rem] w-[50rem] h-[50rem] rounded-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% lg:opacity-10 opacity-5 blur-3xl pointer-events-none transition-all duration-300">
+      <div className="absolute bottom-[-30rem] left-[-20rem] w-[50rem] h-[50rem] rounded-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% opacity-10 blur-3xl pointer-events-none transition-all duration-300">
       </div>
-      <div className="absolute bottom-[-30rem] right-[-20rem] w-[50rem] h-[50rem] rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 lg:opacity-10 opacity-5 blur-3xl pointer-events-none transition-all duration-300">
+      <div className="absolute bottom-[-30rem] right-[-20rem] w-[50rem] h-[50rem] rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-10 blur-3xl pointer-events-none transition-all duration-300">
       </div>
     </div>
   );

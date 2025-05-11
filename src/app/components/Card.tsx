@@ -17,7 +17,7 @@ function Card(props: Props) {
         <div  
             onMouseEnter={() => setIsHover(true)} 
             onMouseLeave={() => setIsHover(false)}
-            className="w-80 lg:w-96 rounded-2xl bg-[#190200] lg:opacity-50 p-3 hover:opacity-100 transition-all duration-300"
+            className="w-56 rounded-2xl bg-[#190200] lg:opacity-50 p-3 hover:opacity-100 transition-all duration-300"
         >
             <UpDownHover isHover={isHover}>
                 <div className="rounded-2xl">
